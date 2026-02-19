@@ -1,0 +1,666 @@
+/* ============================================
+   Import
+   ============================================ */
+/* Bootstrap CSS */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* ============================================
+   変数定義
+   ============================================ */
+:root {
+  --brand-1: #e8f0fe;
+  --brand-2: #e9f7ef;
+  --brand-3: #f2f4f7;
+  --brand-text: #2f363d;
+}
+
+/* ============================================
+   基本スタイル
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--brand-3);
+  color: var(--brand-text);
+}
+
+.inline_block {
+    display: inline-block;
+}
+
+/* ============================================
+   ナビゲーション・ヘッダー
+   ============================================ */
+.navbar {
+  background: #767676;
+}
+
+.navbar-custom {
+  margin-bottom: 0;
+}
+
+.navbar-header {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.navbar-brand {
+  margin-right: 0;
+}
+
+.hamburger-btn {
+  text-decoration: none;
+  padding: 8px;
+}
+
+/* ============================================
+   サイドバー
+   ============================================ */
+.sidebar-pc {
+  width: 240px;
+  min-width: 240px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+}
+
+.sidebar-nav {
+  position: sticky;
+  top: 0;
+}
+
+.menu-section-title {
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #0d6efd;
+}
+
+.sidebar-link {
+  color: #2f363d;
+}
+
+/* ============================================
+   レイアウト
+   ============================================ */
+.layout-wrapper {
+  min-height: calc(100vh - 82px);
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.app-container-inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ============================================
+   ログイン画面
+   ============================================ */
+.login-container {
+  height: calc(100vh - 82px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.login-card-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card {
+  border: none;
+  border-radius: 12px;
+}
+
+.login-form {
+  width: 100%;
+}
+
+/* ログインフォームのプレースホルダー（スマホで小さく） */
+@media (max-width: 575.98px) {
+  .login-form input::placeholder {
+    font-size: 0.875rem;
+  }
+}
+
+.home-link-container {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ============================================
+   ボタン
+   ============================================ */
+.btn-primary {
+  background-color: #5aa7ff;
+  border-color: #5aa7ff;
+}
+
+.btn-logout {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 6px 18px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-logout:hover,
+.btn-logout:focus {
+  background-color: #c82333;
+  border-color: #bd2130;
+  color: #ffffff;
+}
+
+.btn-logout:active {
+  background-color: #b21f2d;
+  border-color: #a71d2a;
+  color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .btn-logout {
+    font-size: 0.85rem;
+    padding: 4px 14px;
+  }
+}
+
+.btn-submit-min {
+  min-width: 70px;
+}
+
+/* ============================================
+   ページタイトル
+   ============================================ */
+.page-title {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  position: relative;
+  padding-bottom: 0.25rem;
+  background: linear-gradient(90deg, #2447ff 0%, #09b6a2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 140px;
+  height: 6px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #5aa7ff, #8fdcc0);
+}
+
+.section-title {
+  color: #2f363d;
+}
+
+/* ============================================
+   カード
+   ============================================ */
+main .card.home-menu-card {
+  background-color: var(--brand-1);
+}
+
+/* ============================================
+   テーブル
+   ============================================ */
+.table {
+  --bs-table-bg: transparent !important;
+}
+
+.table thead th {
+  background: var(--brand-1);
+}
+
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* テーブルの縦スクロールを防止 */
+.table-responsive.js-scrollable {
+  overflow-y: hidden !important;
+}
+
+.table-responsive table {
+  min-width: 900px;
+}
+
+.table-responsive-s table {
+  min-width: 480px;
+}
+
+.table-fixed-layout {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* 停止中の行の背景色（ごく薄いグレー） */
+table.table tbody tr.bg-light {
+  background-color: #f5f5f5 !important;
+}
+
+/* カラム幅指定 */
+.col-width-12 {
+  width: 12%;
+}
+
+.col-width-15 {
+  width: 15%;
+}
+
+.col-width-20 {
+  width: 20%;
+}
+
+.col-width-10 {
+  width: 10%;
+}
+
+.col-width-16 {
+  width: 16%;
+}
+
+/* 出荷日フィールドのレスポンシブレイアウト */
+.date-range-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* 480px以下で縦並び */
+@media (max-width: 480px) {
+  .date-range-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* Bootstrapの.form-controlのwidth: 100%を上書き */
+.date-range-flex .form-control {
+  width: auto;
+  flex: 0 0 auto;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+@media (max-width: 480px) {
+  .date-range-flex .form-control {
+    width: 100%;
+  }
+}
+
+/* セパレータは常に表示（常に「から」） */
+.date-range-separator {
+  display: inline-block;
+  margin: 0 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .date-range-separator {
+    margin: 0.25rem 0;
+    align-self: flex-start;
+  }
+}
+
+/* ============================================
+   フォーム
+   ============================================ */
+.edit-qty-input {
+  width: 64px;
+}
+
+/* 製品登録フォーム用 */
+.form-field-flex {
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.form-field-price {
+  min-width: 120px;
+  max-width: 200px;
+}
+
+.form-field-unit {
+  min-width: 120px;
+  max-width: 180px;
+  flex: 0 1 auto;
+}
+
+/* 入力者登録フォーム用 */
+.form-field-name {
+  min-width: 250px;
+  max-width: 400px;
+  flex: 1 1 auto;
+}
+
+/* セレクトボックスの幅設定 */
+.select-filter-width {
+  width: auto;
+  min-width: 200px;
+}
+
+/* セレクトボックスの幅を安定させる（レイアウトシフト防止） */
+.col-12.col-sm-auto .form-select,
+.col-sm-auto .form-select {
+  min-width: 180px;
+}
+
+/* ラベルの改行防止 */
+.label-nowrap {
+  white-space: nowrap;
+}
+
+/* ============================================
+   PDF出力
+   ============================================ */
+/* PDFヘッダー用スタイル */
+.pdf-header {
+  padding: 10px;
+  border-bottom: 2px solid #333;
+  margin-bottom: 15px;
+}
+
+.pdf-header-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.pdf-header-content {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* PDF生成用フォント設定 */
+.pdf-font-base {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 14px;
+}
+
+/* PDF出力セクションのレスポンシブ対応 */
+.pdf-export-section {
+  width: 100%;
+}
+
+.pdf-orientation-group {
+  flex-wrap: wrap;
+}
+
+.pdf-orientation-label {
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+.pdf-export-btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 575.98px) {
+  .pdf-export-section .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+  
+  .pdf-orientation-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ============================================
+   ヘルプボタン
+   ============================================ */
+.help-button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.help-button-text {
+  display: inline;
+}
+
+.help-button-custom {
+  background-color: #4A90E2;
+  border-color: #4A90E2;
+  color: white;
+  box-shadow: 0 2px 4px rgba(74, 144, 226, 0.3);
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.help-button-custom:hover {
+  background-color: #357ABD;
+  border-color: #357ABD;
+  color: white;
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.4);
+  transform: translateY(-1px);
+}
+
+.help-button-custom:active {
+  background-color: #2A6BA0;
+  border-color: #2A6BA0;
+  transform: translateY(0);
+}
+
+/* ページタイトルとヘルプボタンのレイアウト調整 */
+@media (max-width: 768px) {
+  .d-flex.justify-content-between.align-items-center.mb-4 {
+    flex-direction: column;
+    align-items: flex-start !important;
+    row-gap: 2rem;
+  }
+  
+  .d-flex.justify-content-between.align-items-center.mb-4 .help-button {
+    align-self: flex-end;
+  }
+}
+
+/* ============================================
+   請求書
+   ============================================ */
+.invoice-container {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 20mm 18mm;
+  background-color: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
+  font-family: 'Noto Sans JP', 'Meiryo', sans-serif;
+}
+
+.invoice-title {
+  font-size: 22px;
+  letter-spacing: 6px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(90deg, #234a85, #2f6db8);
+  padding: 12px 24px;
+  width: 100%;
+}
+
+.invoice-header-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.invoice-meta {
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.invoice-address {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+
+.invoice-recipient p,
+.invoice-sender p {
+  margin-bottom: 4px;
+}
+
+.invoice-recipient-company {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.invoice-sender {
+  position: relative;
+  padding-right: 60px;
+}
+
+.invoice-sender-content {
+  width: 100%;
+}
+
+.invoice-sender-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.invoice-seal {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.invoice-bank p {
+  margin-bottom: 4px;
+}
+
+.invoice-subject {
+  border-bottom: 1px solid #cfd8e3;
+  padding: 6px 0;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.invoice-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+.invoice-summary-table th,
+.invoice-summary-table td {
+  border: 1px solid #bfc8d6;
+  padding: 8px 12px;
+}
+
+.invoice-summary-table th {
+  background-color: #edf4ff;
+  width: 25%;
+  text-align: left;
+}
+
+.invoice-summary-table td {
+  text-align: right;
+  font-weight: 600;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+  margin-bottom: 16px;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #bfc8d6;
+  padding: 6px 8px;
+  vertical-align: top;
+}
+
+.invoice-table th {
+  background-color: #edf4ff;
+}
+
+.invoice-table tbody tr.invoice-blank-row td {
+  height: 18px;
+}
+
+.invoice-table tfoot td {
+  border: 1px solid #bfc8d6;
+  background-color: #edf4ff;
+}
+
+.invoice-table tfoot tr:last-child td {
+  font-size: 12px;
+}
+
+.invoice-hidden-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-9999px, -9999px);
+  pointer-events: none;
+}
+
+.invoice-print-page {
+  margin-bottom: 24px;
+}
+
+.invoice-print-page:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   ユーティリティ
+   ============================================ */
+/* 単位の幅統一 */
+.unit-width {
+  min-width: 1em;
+  text-align: center;
+}
+
+/* 入力欄のヘルプテキスト用コンテナ（レイアウトがたつかないようにスペースを確保） */
+.input-help-text-container {
+  min-height: 25px;
+  padding-top: 0.25rem;
+}

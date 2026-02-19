@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+sanchoku/backend/node_modules/
+sanchoku/frontend/node_modules/
+sanchoku/node_modules/
+
+# Build outputs
+backend/dist/
+frontend/.next/
+frontend/out/
+sanchoku/backend/dist/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+backend/.env
+backend/.env.local
+backend/.env.production
+frontend/.env.local
+frontend/.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup folders
+hoshigami_bk*/
+bk/
+
+# Optional: Keep sanchoku if needed for production
+# Uncomment if you want to exclude sanchoku from production
+# sanchoku/
+
+
+
+
+
+
+
+
+
+
