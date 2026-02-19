@@ -49,6 +49,9 @@ pnpm-debug.log*
 hoshigami_bk*/
 bk/
 
+#documents
+docs/
+
 # Optional: Keep sanchoku if needed for production
 # Uncomment if you want to exclude sanchoku from production
 # sanchoku/
