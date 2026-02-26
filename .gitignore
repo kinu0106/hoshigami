@@ -2,15 +2,11 @@
 node_modules/
 backend/node_modules/
 frontend/node_modules/
-sanchoku/backend/node_modules/
-sanchoku/frontend/node_modules/
-sanchoku/node_modules/
 
 # Build outputs
 backend/dist/
 frontend/.next/
 frontend/out/
-sanchoku/backend/dist/
 
 # Environment variables
 .env
@@ -52,9 +48,6 @@ bk/
 #documents
 docs/
 
-# Optional: Keep sanchoku if needed for production
-# Uncomment if you want to exclude sanchoku from production
-# sanchoku/
 
 
 
